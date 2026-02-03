@@ -110,7 +110,9 @@ These endpoints provide statistics specific to game modes (e.g., `quickPlay`, `w
 | `/matchPerADU` | POST | Ratio of game matches to total daily active users. | `{ "QuickPlay_Matches": 300, "Total_DailyActiveUsers": 450, "Match_Per_ADU_Ratio": "0.67" }` |
 | `/matchPerPlayer` | POST | Ratio of game matches to unique players of that game. | `{ "QuickPlay_Matches": 300, "QuickPlay_UniquePlayers": 150, "Match_Per_Player_Ratio": "2.00" }` |
 | `/winRate` | POST | Win rate percentage for the game type. | `{ "QuickPlay_Wins": 150, "QuickPlay_TotalMatches": 300, "QuickPlay_WinRate": "50.00%" }` |
+| `/gameStatsReport` | POST | Consolidated report for the game type. | `{ "QuickPlay_Matches": 300, "QuickPlay_UniquePlayers": 150, "Adoption_Percentage": "33.33%", ... }` |
 
 **Note on `gameType`**:
-- Supported values: `quickPlay`, `weeklyEvent`.
-- The response keys usually adapt to the `gameType` (e.g., `Week_Event_Matches` instead of `QuickPlay_Matches`).
+- **Allowed values**: `quickPlay`, `weeklyEvent`, `targetChasing`, `sequenceStar`, `mulitiPlayer`, `tieMaker`, `MFLmode`, `eventMode`, `iplGame`, `localLegends`, `mpPrivate`, `mpPublic`, `vitalityMode`.
+- The response keys adapt to the `gameType` (e.g., `TargetChasing_Matches` instead of `QuickPlay_Matches`).
+

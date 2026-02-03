@@ -10,6 +10,7 @@ router.post('/dailyProgress', requestHandler(playerController.dailyProgress));
 router.post('/totalMatches', requestHandler(playerController.totalMatches));
 router.post('/playerAvgDaily', requestHandler(playerController.playerAvgDaily));
 router.post('/dailyReport', requestHandler(playerController.dailyReport));
+router.post('/actualInstalls', requestHandler(playerController.actualInstalls));
 
 
 

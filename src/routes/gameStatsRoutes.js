@@ -9,5 +9,6 @@ router.post('/adoptionPercentage', requestHandler(gameStatsController.adoptionPe
 router.post('/matchPerADU', requestHandler(gameStatsController.matchPerADU));
 router.post('/matchPerPlayer', requestHandler(gameStatsController.matchPerPlayer));
 router.post('/winRate', requestHandler(gameStatsController.winRate));
+router.post('/gameStatsReport', requestHandler(gameStatsController.gameStatsReport));
 
 module.exports = router;
