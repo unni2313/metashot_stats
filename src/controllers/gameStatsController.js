@@ -109,6 +109,7 @@ const fetchGameTypeUniquePlayersCount = async (startDate, endDate, gameType) => 
 
             }
         },
+        { $unwind: { path: '$playerInfo' } },
         { $group: { _id: '$playerInfo.playerId' } },
         { $count: 'UniquePlayers' }
     ];
