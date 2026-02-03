@@ -127,11 +127,13 @@ const fetchGameTypeWinsCount = async (startDate, endDate, gameType) => {
         {
             $match: {
                 createdDate: { $gte: startDate, $lte: endDate },
-                gameType: gameType,
-                $expr: { $eq: ['$gameWon', '$playerInfo.playerId'] },
-
-
-
+                gameType: gameType
+            }
+        },
+        { $unwind: { path: '$playerInfo' } },
+        {
+            $match: {
+                $expr: { $eq: ['$gameWon', '$playerInfo.playerId'] }
             }
         },
         { $count: 'Wins' }
